@@ -1,0 +1,140 @@
+/*
+CONVENTIONS DE NOMMAGE DES CLASS
+
+Class contenant un trait d'union => ex: ma-class
+    -> Class de style global et helper
+
+Class contenant un underscore => ex: ma_class
+    -> Class d'appel de style spécifique
+*/
+
+:root {
+    /* Gaps - Margin */
+    --gap-mobile: 2rem;
+    --gap-tablet: 3.5rem;
+    --gap-desktop: 4rem;
+    --mb-grand-mobile: 2.5rem;
+    --mb-small-mobile: 1.5rem;
+
+    /* Fonts */
+    --heading-font: 'MuseoModerno', sans-serif;
+    --primary-font: 'Poppins', sans-serif;
+    --text-size-mobile: 1.4rem;
+    --text-size-tablet: 1.6rem;
+    --text-size-desktop: 1.6rem;
+
+    /* Colors */
+    --color-white: rgb(255, 255, 255);
+    --color-beige: rgb(255, 255, 230);
+    --color-yellow: rgb(255, 193, 69);
+    --color-blue: rgb(59, 97, 255);
+    --color-darkblue: rgb(0, 10, 81);
+    --color-green: rgb(98, 232, 91);
+    --color-warn: rgb(255, 45, 45);
+}
+
+
+/* === RESET == */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    color: var(--color-darkblue);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2.0rem; }
+h4 { font-size: 1.8rem; }
+
+@media screen and (min-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.4rem; }
+    h3 { font-size: 2.0rem; }
+    h4 { font-size: 1.8rem; }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2.6rem; }
+    h3 { font-size: 2.2rem; }
+    h4 { font-size: 1.8rem; }
+}
+
+
+p, a, input, label, li {
+    font-size: var(--text-size-mobile);
+}
+@media screen and (min-width: 768px) {
+    p, a, input, label, li {
+        font-size: var(--text-size-tablet);
+    }
+}
+@media screen and (min-width: 1024px) {
+    p, a, input, label, li {
+        font-size: var(--text-size-desktop);
+    }
+}
+
+/* Désaffiche au responsive */
+@media screen and (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+    }
+}
+@media screen and ((min-width: 768px) and (max-width: 1023px)) {
+    .hidden-tablet {
+        display: none;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .hidden-desktop {
+        display: none;
+    }
+}
+
+/* === NAVBAR et CONTENT == */
+@media screen and (min-width: 1024px) {
+    #global_container {
+        display: flex;
+        height: 100vh;
+        padding: 2rem;
+    }
+    
+    #head_nav {
+        background-color: var(--color-darkblue);
+        width: 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: width 0.2s;
+        gap: var(--gap-desktop);
+        padding: 3rem 0;
+        overflow: hidden;
+    }
+    #head_nav:hover {
+        width: 30rem;
+    }
+    #content_container {
+        width: 100%;
+        padding: var(--gap-desktop) 0 var(--gap-desktop) var(--gap-desktop);
+    }
+}

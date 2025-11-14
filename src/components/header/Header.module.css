@@ -1,0 +1,66 @@
+.logo_container {
+    width: 4rem;
+    height: 3.72rem;
+    transition: width 0.2s;
+}
+.head_nav:hover .logo_container {
+    width: 15.92rem;
+    height: 3.72rem;
+}
+.logo_container img {
+    object-fit: cover;
+    object-position: 0 0;
+    width: 100%;
+    height: 3.72rem;
+}
+nav {
+    width: 100%;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+}
+nav li {
+    width: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    line-height: 1;
+    transition: 0.2s;
+    border-radius: 0 0 2rem 0;
+    cursor: pointer;
+}
+nav li a {
+    padding: 1rem 2.5rem;
+    transition: 0.2s;
+}
+:global(nav li:has(a.active)) {
+    background-color: var(--color-blue);
+}
+:global(nav li:not(:has(a.active)):hover) {
+    background-color: var(--color-yellow);
+}
+:global(nav li:not(:has(a.active)):hover a) {
+    color: var(--color-darkblue);
+}
+.head_nav:hover nav li {
+    max-width: unset;
+    width: 100%;
+}
+.head_nav:hover nav li a {
+    padding: 1rem 3rem;
+}
+nav li a {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    font-weight: 500;
+}
+nav a,
+nav a svg path {
+    color: var(--color-beige);
+}
+nav a svg {
+    width: 3rem;
+}

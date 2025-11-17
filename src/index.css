@@ -111,6 +111,14 @@ p, a, input, label, li {
     }
 }
 
+/* === MARGIN === */
+.mb-small {
+    margin-bottom: var(--mb-small-mobile);
+}
+.mb-grand {
+    margin-bottom: var(--mb-grand-mobile);
+}
+
 /* === NAVBAR et CONTENT == */
 @media screen and (min-width: 1024px) {
     #global_container {

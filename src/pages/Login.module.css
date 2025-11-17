@@ -1,0 +1,15 @@
+.login_container {
+  height: 35rem;
+}
+@media screen and (min-width: 768px) {
+    .login_container {
+        height: 32rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .login_container {
+        height: fit-content;
+        width: 60%;
+        margin-top: var(--gap-desktop);
+    }
+}

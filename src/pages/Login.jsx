@@ -11,6 +11,10 @@ export const Login = () => {
         e.preventDefault();
         navigate('/signup');
     }
+    const onClickForgPwdHandler = (e) => {
+        e.preventDefault();
+        navigate('/signup');
+    }
     return (
         <div className={ `${classes['login_container']}` }>
             <h1 className={ `mb-small` }>Se connecter</h1>
@@ -21,6 +25,7 @@ export const Login = () => {
 
                 <Button type="submit" text="Connexion" style="primary" moreClasses="mb-small" />
                 <p>Pas encore inscrit ?<br className={ `hidden-tablet hidden-desktop` }></br> <a href="" onClick={ onClickHandler } >Créer mon compte</a></p>
+                <a href="" onClick={ onClickForgPwdHandler } >Mot de passe oublié</a>
             </form>
         </div>
     )

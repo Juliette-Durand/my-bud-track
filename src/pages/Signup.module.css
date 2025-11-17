@@ -1,0 +1,18 @@
+.signup_container {
+    height: fit-content;
+}
+.signup_container a {
+  text-decoration: underline;
+}
+.signup_container a:hover {
+  color: var(--color-yellow);
+}
+@media screen and (min-width: 1024px) {
+    .signup_container {
+        width: 60%;
+    }
+    .form_name_container {
+        display: flex;
+        gap: var(--gap-tablet);
+    }
+}

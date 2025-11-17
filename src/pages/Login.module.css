@@ -1,14 +1,14 @@
 .login_container {
-  height: 35rem;
+  height: fit-content;
 }
-@media screen and (min-width: 768px) {
-    .login_container {
-        height: 32rem;
-    }
+.login_container a {
+  text-decoration: underline;
+}
+.login_container a:hover {
+  color: var(--color-yellow);
 }
 @media screen and (min-width: 1024px) {
     .login_container {
-        height: fit-content;
         width: 60%;
         margin-top: var(--gap-desktop);
     }

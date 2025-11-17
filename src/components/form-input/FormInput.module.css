@@ -29,3 +29,14 @@
 .form-input input::placeholder {
     color: color-mix(in srgb, var(--color-blue), transparent);
 }
+.form-input label,
+.form-input input {
+    transition: 0.2s;
+}
+.form-input label:has( + input:focus-visible) {
+    color: var(--color-blue);
+}
+.form-input input:focus-visible {
+    outline: none;
+    border-color: var(--color-blue);
+}

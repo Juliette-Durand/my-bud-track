@@ -8,6 +8,8 @@ import { PrivateLayout } from "../layouts/PrivateLayout.jsx";
 import { PrivateRoute } from "./PrivateRoute.jsx";
 import { AdminRoute } from "./AdminRoute.jsx";
 
+import { AuthProvider } from "../contexts/auth-context.jsx";
+
 import { Login } from "../pages/Login.jsx";
 import { Signup } from "../pages/Signup.jsx";
 import { Accounts } from "../pages/Accounts.jsx";
@@ -19,7 +21,11 @@ import { Error404 } from "../pages/Error404.jsx";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: (
+            <AuthProvider>
+                <App/>
+            </AuthProvider>
+        ),
         errorElement: <Error404 />,
         children: [
             // ROUTES PUBLIQUES

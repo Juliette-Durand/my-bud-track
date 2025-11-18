@@ -53,6 +53,7 @@ ul, ol {
 
 a {
     text-decoration: none;
+    transition: 0.2s;
 }
 
 /* Headings */
@@ -109,6 +110,14 @@ p, a, input, label, li {
     .hidden-desktop {
         display: none;
     }
+}
+
+/* === MARGIN === */
+.mb-small {
+    margin-bottom: var(--mb-small-mobile);
+}
+.mb-grand {
+    margin-bottom: var(--mb-grand-mobile);
 }
 
 /* === NAVBAR et CONTENT == */

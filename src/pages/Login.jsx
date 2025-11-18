@@ -1,10 +1,16 @@
 import classes from './Login.module.css';
+
+import { useNavigate } from "react-router";
+import { useContext } from "react";
+
+import { AuthContext } from "../contexts/auth-context.jsx";
+
 import { FormInput } from '../components/form-input/FormInput';
 import { Button } from '../components/button/Button';
-import { useNavigate } from "react-router";
 
 export const Login = () => {
 
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onClickHandler = (e) => {
@@ -15,10 +21,16 @@ export const Login = () => {
         e.preventDefault();
         navigate('/signup');
     }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        login();
+    }
+
     return (
         <div className={ `${classes['login_container']}` }>
             <h1 className={ `mb-small` }>Se connecter</h1>
-            <form action="" method="POST" id="login_form">
+            <form action="" method="POST" id="login_form" onSubmit={ submitHandler } >
                 <FormInput type="email" name="email" label="Adresse email" placeholder="exemple@email.com" containerClasses={ ['mb-small'] } />
 
                 <FormInput type="password" name="password" label="Mot de passe" containerClasses={ 'mb-grand' } />

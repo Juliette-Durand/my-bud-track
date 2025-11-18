@@ -20,7 +20,7 @@ ul {
     display: flex;
     flex-direction: column;
 }
-nav li {
+nav li, .disconnect_btn {
     width: 100%;
     overflow: hidden;
     max-width: 100%;
@@ -29,9 +29,15 @@ nav li {
     border-radius: 0 0 2rem 0;
     cursor: pointer;
 }
-nav li a {
+nav li a, .disconnect_btn a {
     padding: 1rem 2.5rem;
     transition: 0.2s;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    font-weight: 500;
 }
 :global(nav li:has(a.active)) {
     background-color: var(--color-blue);
@@ -49,18 +55,24 @@ nav li a {
 .head_nav:hover nav li a {
     padding: 1rem 3rem;
 }
-nav li a {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 3rem;
-    font-weight: 500;
-}
 nav a,
 nav a svg path {
     color: var(--color-beige);
 }
-nav a svg {
+nav a svg, .disconnect_btn a svg {
     width: 3rem;
+}
+.disconnect_btn {
+    margin-top: auto;
+    background-color: var(--color-yellow);
+}
+.disconnect_btn:hover {
+    background-color: var(--color-beige);
+}
+.disconnect_btn a,
+.disconnect_btn a svg path {
+    color: var(--color-darkblue);
+}
+.disconnect_btn:hover a svg path {
+    color: var(--color-blue);
 }

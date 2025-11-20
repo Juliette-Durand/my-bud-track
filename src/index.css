@@ -15,6 +15,7 @@ Class contenant un underscore => ex: ma_class
     --gap-desktop: 4rem;
     --mb-grand-mobile: 2.5rem;
     --mb-small-mobile: 1.5rem;
+    --body-padding: 2rem;
 
     /* Fonts */
     --heading-font: 'MuseoModerno', sans-serif;
@@ -31,6 +32,9 @@ Class contenant un underscore => ex: ma_class
     --color-darkblue: rgb(0, 10, 81);
     --color-green: rgb(98, 232, 91);
     --color-warn: rgb(255, 45, 45);
+
+    --width-header-closed: 8rem;
+    --width-header-openned: 26rem;
 }
 
 
@@ -130,7 +134,7 @@ p, a, input, label, li {
     
     #head_nav {
         background-color: var(--color-darkblue);
-        width: 8rem;
+        width: var(--width-header-closed);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -138,12 +142,34 @@ p, a, input, label, li {
         gap: var(--gap-desktop);
         padding: 3rem 0;
         overflow: hidden;
+        position: fixed;
+        top: var(--body-padding);
+        height: calc(100vh - (var(--body-padding) * 2));
     }
     #head_nav:hover {
-        width: 30rem;
+        width: var(--width-header-openned);
     }
     #content_container {
-        width: 100%;
+        position: relative;
+        width: calc(100% - var(--width-header-closed));
+        left: var(--width-header-closed);
+        transition: 0.2s;
         padding: var(--gap-desktop) 0 var(--gap-desktop) var(--gap-desktop);
+        overflow-y: auto;
     }
+
+    #global_container:has(#head_nav:hover) #content_container {
+        width: calc(100% - var(--width-header-openned));
+        left: var(--width-header-openned);
+    }
+}
+
+.page_content {
+    display: flex;
+    gap: var(--gap-desktop);
+}
+.head_and_content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }

@@ -1,13 +1,22 @@
 import classes from './AccountItem.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export const AccountItem = ({ label, category, balance }) => {
+
+    const navigate = useNavigate();
+
+    const onClickHandler = (e) => {
+        e.preventDefault();
+        navigate('/accounts/1');
+    }
+
     return (
-        <a class={ classes["account_item"] }>
-            <div class={ classes["account_icon"] }></div>
-            <div class={ classes["account_content"] }>
+        <a className={ classes["account_item"] } onClick={ onClickHandler }>
+            <div className={ classes["account_icon"] }></div>
+            <div className={ classes["account_content"] }>
                 <h3>{ label }</h3>
-                <span class={ classes["account_category"] }>{ category }</span>
-                <span class={ classes["account_balance"] }>{ balance } €</span>
+                <span className={ classes["account_category"] }>{ category }</span>
+                <span className={ classes["account_balance"] }>{ balance } €</span>
             </div>
         </a>
     );

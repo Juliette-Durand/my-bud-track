@@ -4,7 +4,7 @@ export const PageStructure = ({ children, title }) => {
     return (
         <>
             <PageHeading title={ title } />
-            <div class={ `page_content` }>
+            <div className={ `page_content` }>
                 { children }
             </div>
         </>

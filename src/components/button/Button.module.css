@@ -1,9 +1,11 @@
 .btn {
     border: solid 0.2rem;
     padding: 1rem 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
+    width: fit-content;
 }
 .btn-primary {
     border: var(--color-blue);

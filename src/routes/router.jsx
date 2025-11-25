@@ -17,6 +17,9 @@ import { Transactions } from "../pages/Transactions.jsx";
 import { Profile } from "../pages/Profile.jsx";
 import { Admin } from "../pages/Admin.jsx";
 import { Error404 } from "../pages/Error404.jsx";
+import { AccountDetail } from "../pages/AccountDetail.jsx";
+import { AccountCreate } from "../pages/AccountCreate.jsx";
+import { AccountEdit } from "../pages/AccountEdit.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +44,9 @@ export const router = createBrowserRouter([
                 element: ( <PrivateRoute><PrivateLayout /></PrivateRoute> ),
                 children: [
                     { index: true, element: <Accounts /> },
+                    { path: "accounts/:id", element: <AccountDetail /> },
+                    { path: "accounts/:id/edit", element: <AccountEdit /> },
+                    { path: "accounts/create", element: <AccountCreate /> },
                     { path: "transactions", element: <Transactions /> },
                     { path: "me", element: <Profile /> },
                     {

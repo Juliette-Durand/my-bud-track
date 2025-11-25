@@ -1,0 +1,49 @@
+.form-choice {
+    display:flex;
+    align-items: center;
+}
+.form-choice input {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0;
+    border: 0.2rem solid black;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-right: 1rem;
+    background-color: var(--color-white);
+}
+.form-choice input[type="checkbox"] {
+    border-radius: 0;
+    position:relative;
+}
+.form-choice input[type="radio"] {
+    border-radius: 50%;
+}
+.form-choice input:checked {
+    background-color: var(--color-blue);
+}
+.form-choice input[type="checkbox"]:checked::after {
+    content:"";
+    position:absolute;
+    top: 0.1rem;
+    left:0.2rem;
+    width: 0.8rem;
+    height: 0.3rem;
+    border: 0.3rem solid;
+    transform: rotate(-45deg);
+    border-left-color: var(--color-white);
+    border-bottom-color: var(--color-white);
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+.form-choice label {
+    transition: 0.2s;
+}
+.form-choice label:hover {
+    color: var(--color-blue);
+}
+.form-choice input:not(input:checked):hover,
+.form-choice:has(label:hover) input:not(input:checked) {
+    background-color: var(--color-beige);
+}

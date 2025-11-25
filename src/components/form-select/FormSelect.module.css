@@ -1,0 +1,39 @@
+.form-select label {
+    font-size: calc(var(--text-size-desktop) - 0.2rem);
+    font-weight: 600;
+}
+.form-select select,
+.form-select ::picker(select) {
+  appearance: base-select;
+}
+.form-select select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-size-desktop);
+    border: solid var(--color-darkblue) 0.2rem;
+    border-radius: 0;
+    cursor: pointer;
+}
+.form-select select:hover {
+    background-color: var(--color-white);
+}
+.form-select select:focus-visible {
+    outline: none;
+    border-color: var(--color-blue);
+
+}
+.form-select ::picker(select) {
+    border: solid var(--color-darkblue) 0.2rem;
+}
+.form-select select option {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-white);
+    transition: 0.2s;
+}
+.form-select select option:hover {
+    background-color: var(--color-yellow);
+}
+.form-select select option:checked {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}

@@ -1,0 +1,40 @@
+.account_item {
+    background-color: color-mix(in srgb, var(--color-darkblue), var(--color-white) 98%);
+    display: flex;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+.account_item:hover {
+    background-color: var(--color-yellow);
+}
+.account_icon {
+    background-color: var(--color-blue);
+    width: 7rem;
+    height: 7rem;
+    flex-shrink: 0;
+}
+.account_content{
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    line-height: 1;
+}
+.account_item h3 {
+    font-size: 2rem;
+    line-height: 2.6rem;
+    color: var(--color-darkblue);
+}
+.account_category {
+    font-size: 1.4rem;
+    display: block;
+    color: var(--color-darkblue);
+}
+.account_balance {
+    font-size: 2.4rem;
+    margin-top: auto;
+    align-self: flex-end;
+    font-weight: 700;
+    color: var(--color-blue);
+}

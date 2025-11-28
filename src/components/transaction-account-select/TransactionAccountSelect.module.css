@@ -1,0 +1,125 @@
+.account-select {
+  position: relative;
+  width: 40%;
+}
+
+/* Bouton */
+.select-button {
+  width: 100%;
+  padding: 2rem;
+  background: var(--color-blue);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  gap: 0.2rem;
+}
+.select-button.dest {
+  background: var(--color-yellow);
+}
+
+.select-button:hover {
+  background: var(--color-darkblue);
+}
+.select-button:hover .selected-label-title {
+  color: var(--color-blue);
+}
+.selected-label-title {
+  color: var(--color-darkblue);
+  transition: 0.2s;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.selected-label {
+  color: var(--color-beige);
+  transition: 0.2s;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.select-button:hover .selected-label {
+  color: var(--color-yellow);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 0;
+  width: 100%;
+  background: var(--color-darkblue);
+  padding: 1rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.8rem);
+  transition: 0.2s;
+  max-height: 30rem;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+/* Scrollbar */
+.dropdown::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.dropdown::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-beige), transparent 60%);
+  border-radius: 0.2rem;
+}
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-beige), transparent 40%);
+}
+
+.account-select.open .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.section {
+  padding: 0.8rem 1.5rem;
+}
+.section-title {
+  color: var(--color-yellow);
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+
+.account-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.account-list li {
+  padding: 0.8rem 1.5rem;
+  color: var(--color-beige);
+  border-radius: 0 0 2rem 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.account-list li:hover {
+  background: var(--color-blue);
+}
+
+.public-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  font-size: 1.4rem;
+  background: var(--color-beige);
+  color: var(--color-darkblue);
+  outline: none;
+}
+.public-search-input::placeholder {
+  color: color-mix(in srgb, var(--color-darkblue), transparent 50%);
+}
+
+#publicResultsSection {
+  display: none;
+}

@@ -123,3 +123,19 @@
 #publicResultsSection {
   display: none;
 }
+
+.link,
+.link a {
+  color: var(--color-beige);
+  font-size: 1.2rem;
+  text-align: center;
+}
+.link a {
+  color: var(--color-yellow);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  cursor: pointer;
+}
+.link a:hover {
+  color: var(--color-beige);
+}

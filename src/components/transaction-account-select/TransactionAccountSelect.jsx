@@ -1,7 +1,16 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from './TransactionAccountSelect.module.css';
 
 export const TransactionAccountSelect = ({ isDestAccount = false }) => {
+
+    const navigate = useNavigate();
+
+    // Clic sur créer un compte
+    const createAccountHandler = (e) => {
+        e.preventDefault();
+        navigate('/accounts/create');
+    }
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedLabel, setSelectedLabel] = useState("Choisir un compte"); // Valeur d'affichage dans select
@@ -98,7 +107,7 @@ export const TransactionAccountSelect = ({ isDestAccount = false }) => {
                     </div>
 
                     {/* Résultats publics */}
-                    { filteredAccounts.length > 0 && (
+                    { filteredAccounts.length > 0 ? (
                         <div className={ classes["section"] }>
                             <ul className={ `${classes["account-list"]} ${classes["public-results"]}` }>
                                 {filteredAccounts.map((account) => (
@@ -108,6 +117,8 @@ export const TransactionAccountSelect = ({ isDestAccount = false }) => {
                                 ))}
                             </ul>
                         </div>
+                    ) : (
+                        <p className={ classes.link } >Le compte n'existe pas&nbsp;? <a onClick={ createAccountHandler }>Créez-le</a></p>
                     )}
                 </div>
             )}

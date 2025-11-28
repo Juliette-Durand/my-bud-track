@@ -11,8 +11,8 @@ export const NavHeader = () => {
             <ul>
                 <li><NavItem icon={ <AccountIcon /> } text="Comptes" path="/" /></li>
                 <li><NavItem icon={ <TransactionIcon /> } text="Transactions" path="/transactions" /></li>
-                <li><NavItem icon={ <HomeIcon /> } text="Administration" path="/me" /></li>
-                <li><NavItem icon={ <HomeIcon /> } text="Profil" path="/admin" /></li>
+                <li><NavItem icon={ <HomeIcon /> } text="Administration" path="/admin" /></li>
+                <li><NavItem icon={ <HomeIcon /> } text="Profil" path="/me" /></li>
             </ul>
         </nav>
     );

@@ -10,19 +10,19 @@
 }
 .account_icon {
     background-color: var(--color-blue);
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
     flex-shrink: 0;
 }
 .account_content{
-    height: 7rem;
+    min-height: 6rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     line-height: 1;
 }
 .account_item h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 2.6rem;
     color: var(--color-darkblue);
 }
@@ -32,9 +32,24 @@
     color: var(--color-darkblue);
 }
 .account_balance {
-    font-size: 2.4rem;
+    font-size: 2rem;
     margin-top: auto;
     align-self: flex-end;
     font-weight: 700;
     color: var(--color-blue);
+}
+@media screen and (min-width: 1024px) {
+    .account_icon {
+        width: 7rem;
+        height: 7rem;
+    }
+    .account_content{
+        min-height: 7rem;
+    }
+    .account_item h3 {
+        font-size: 2rem;
+    }
+    .account_balance {
+        font-size: 2.4rem;
+    }
 }

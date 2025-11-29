@@ -9,11 +9,11 @@ import { NavItem } from "../nav-item/NavItem.jsx";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth-context.jsx";
 
-export const Header = () => {
+export const Header = ({ isOpen }) => {
 
     // Récupère la méthode de déconnexion de AuthContext
     const { logout } = useContext(AuthContext);
-
+    
     // Déconnexion au clic sur le bouton
     const clickDisconnectHandler = (e) => {
         e.preventDefault();
@@ -21,8 +21,8 @@ export const Header = () => {
     }
 
     return (
-        <header id="head_nav" className={ classes['head_nav'] }>
-            <div className={ classes['logo_container'] }>
+        <header id="head_nav" className={ `${classes['head_nav']} ${ isOpen ? "open" : "" }` }>
+            <div className={ classes['logo_container'] } >
                 <img src={ logo } alt=""></img>
             </div>
             <NavHeader />

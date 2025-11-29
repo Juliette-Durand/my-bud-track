@@ -1,17 +1,25 @@
 .logo_container {
-    width: 4rem;
-    height: 3.72rem;
-    transition: width 0.2s;
-}
-.head_nav:hover .logo_container {
-    width: 15.92rem;
-    height: 3.72rem;
+    width: 15rem;
 }
 .logo_container img {
-    object-fit: cover;
-    object-position: 0 0;
     width: 100%;
-    height: 3.72rem;
+}
+@media screen and (min-width: 1024px) {
+    .logo_container {
+        width: 4rem;
+        height: 3.72rem;
+        transition: width 0.2s !important;
+    }
+    .head_nav:hover .logo_container {
+        width: 15.92rem;
+        height: 3.72rem;
+    }
+    .logo_container img {
+        object-fit: cover;
+        object-position: 0 0;
+        width: 100%;
+        height: 3.72rem;
+    }
 }
 nav {
     width: 100%;
@@ -63,8 +71,12 @@ nav a svg, .disconnect_btn a svg {
     width: 3rem;
 }
 .disconnect_btn {
-    margin-top: auto;
     background-color: var(--color-yellow);
+}
+@media screen and (min-width: 1024px) {
+    .disconnect_btn {
+        margin-top: auto;
+    }
 }
 .disconnect_btn:hover {
     background-color: var(--color-beige);

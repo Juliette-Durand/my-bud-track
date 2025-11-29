@@ -16,6 +16,7 @@ Class contenant un underscore => ex: ma_class
     --mb-grand-mobile: 2.5rem;
     --mb-small-mobile: 1.5rem;
     --body-padding: 2rem;
+    --body-padding-mobile: 1rem;
 
     /* Fonts */
     --heading-font: 'MuseoModerno', sans-serif;
@@ -125,6 +126,65 @@ p, a, input, label, li {
 }
 
 /* === NAVBAR et CONTENT == */
+#head_nav {
+    background-color: var(--color-darkblue);
+    width: calc(100vw - (var(--body-padding-mobile) * 2));
+    height: calc(100vh - (var(--body-padding-mobile) * 2));
+    transition: 1s;
+    max-height: 0;
+    max-width: 0;
+    position: fixed;
+    bottom: var(--body-padding-mobile);
+    left: var(--body-padding-mobile);
+    overflow:hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    z-index: 998;
+}
+#head_nav * {
+    opacity: 0;
+    transition: opacity 1s;
+}
+#head_nav.open {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 3rem 0;
+}
+#head_nav.open * {
+    opacity: 1;
+}
+#nav_button {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-yellow);
+    border-radius: 0 0 2rem 0;
+    position: fixed;
+    bottom: var(--body-padding-mobile);
+    left: var(--body-padding-mobile);
+    transition: 0.2s;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nav_button img {
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: translateX(-0.1rem) translateY(-0.1rem);
+}
+#nav_button.open {
+    background-color: var(--color-blue);
+    bottom: calc(var(--body-padding-mobile) + 1rem);
+    left: calc(var(--body-padding-mobile) + 1rem);
+}
+@media screen and (min-width: 768px) {
+    #head_nav {
+        width: 30rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     #global_container {
         display: flex;
@@ -135,6 +195,8 @@ p, a, input, label, li {
     #head_nav {
         background-color: var(--color-darkblue);
         width: var(--width-header-closed);
+        max-height: unset;
+        max-width: unset;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -144,10 +206,19 @@ p, a, input, label, li {
         overflow: hidden;
         position: fixed;
         top: var(--body-padding);
+        left: unset;
+        bottom: unset;
         height: calc(100vh - (var(--body-padding) * 2));
+        z-index: unset;
     }
     #head_nav:hover {
         width: var(--width-header-openned);
+    }
+    #head_nav * {
+        opacity: 1;
+    }
+    #nav_button {
+        display: none;
     }
     #content_container {
         position: relative;

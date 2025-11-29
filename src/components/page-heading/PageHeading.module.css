@@ -1,3 +1,9 @@
 .page_heading h1 {
     color: var(--color-blue);
+    margin-top: 1rem;
+}
+@media screen and (min-width: 1024px) {
+    .page_heading h1 {
+        margin-top: unset;
+    }
 }

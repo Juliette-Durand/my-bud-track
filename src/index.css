@@ -180,6 +180,9 @@ p, a, input, label, li {
     bottom: calc(var(--body-padding-mobile) + 1rem);
     left: calc(var(--body-padding-mobile) + 1rem);
 }
+#content_container {
+    padding: var(--gap-mobile);
+}
 @media screen and (min-width: 768px) {
     #head_nav {
         width: 30rem;
@@ -237,7 +240,13 @@ p, a, input, label, li {
 
 .page_content {
     display: flex;
+    flex-direction: column;
     gap: var(--gap-desktop);
+}
+@media screen and (min-width: 1024px) {
+    .page_content {
+        flex-direction: row;
+    }
 }
 .head_and_content {
     display: flex;

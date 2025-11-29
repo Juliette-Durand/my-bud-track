@@ -1,6 +1,12 @@
-.accounts {
-    width: 30%;
-}
+.accounts,
 .overview {
-    width: 70%;
+    width: 100%;
+}
+@media screen and (min-width: 1024px) {
+    .accounts {
+        width: 30%;
+    }
+    .overview {
+        width: 70%;
+    }
 }

@@ -1,0 +1,40 @@
+.trans_item {
+    background-color: color-mix(in srgb, var(--color-darkblue), var(--color-white) 98%);
+    padding: 1.5rem;
+    line-height: 1;
+}
+.trans_item_header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+.trans_item_icon {
+    width: 2rem;
+    background-color: var(--color-yellow);
+}
+.trans_item_header span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    display: block;
+}
+
+.trans_item_description {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.trans_item_date {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+.trans_item_amount {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.trans_item_amount.debit {
+    color: var(--color-warn);
+}
+.trans_item_amount.credit {
+    color: var(--color-green);
+}

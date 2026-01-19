@@ -1,0 +1,37 @@
+.transactions,
+.detail,
+.overview {
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .transactions {
+        width: 30%;
+    }
+    .transactions.detail_open {
+        width: 35%;
+    }
+    .detail {
+        width: 40%;
+    }
+    .detail.detail_open {
+        width: 40%;
+    }
+    .overview {
+        width: 40%;
+    }
+    .overview.detail_open {
+        width: 25%;
+    } 
+}
+
+.overview_content {
+    background-color: var(--color-yellow);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.overview_content p {
+    color: var(--color-white);
+}

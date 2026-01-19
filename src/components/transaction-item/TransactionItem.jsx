@@ -2,12 +2,12 @@ import classes from './TransactionItem.module.css';
 
 import { useFormatMoney } from '../../hooks/useFormatMoney';
 
-export const TransactionItem = ({ label, isCredit = false, amount }) => {
+export const TransactionItem = ({ label, isCredit = false, amount, onClick }) => {
 
     const { formatMoney } = useFormatMoney();
 
     return (
-        <div className={ classes['trans_item'] }>
+        <div className={ classes['trans_item'] } onClick={ onClick } >
             <div className={ classes['trans_item_header'] }>
                 <div className={ classes['trans_item_icon'] }></div>
                 <span>{ label }</span>

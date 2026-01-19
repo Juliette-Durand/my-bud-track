@@ -17,6 +17,12 @@ export const AccountDetail = () => {
     const openModal = () => setIsActive(true); // Ouvre la modal
     const closeModal = () => setIsActive(false); // Ferme la modal
 
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const openDetailHandler = () => {
+        console.log('Click');
+        setIsDetailOpen(true);
+    }
+
     const onClickHandler = (e) => {
         // Suppression du compte
     };
@@ -30,7 +36,7 @@ export const AccountDetail = () => {
             
             <PageStructure title="Libellé du compte" >
                 { /* Informations sur le compte */ }
-                <HeadAndContent title="Vue d'ensemble" styleClass={ classes['overview'] }>
+                <HeadAndContent title="Vue d'ensemble" styleClass={ `${classes['overview']} ${ isDetailOpen ? classes['detail_open'] : "" }` }>
                     <div className={ classes['overview_content'] } >
                         <div>
                             <h4>Solde actuel</h4>
@@ -51,31 +57,19 @@ export const AccountDetail = () => {
                 </HeadAndContent>
 
                 { /* Liste des transactions du mois en cours */ }
-                <HeadAndContent title="Dernières transactions" styleClass={ classes['transactions'] }>
+                <HeadAndContent title="Dernières transactions" styleClass={ `${classes['transactions']} ${ isDetailOpen ? classes['detail_open'] : "" }` }>
                     <Button type="navigation" text="Nouvelle transaction" link="/transactions"/>
                     <ItemList>            
-                        <TransactionItem label="Regul Center Park" amount="123.02" />
-                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" />
-                        <TransactionItem label="Lego Store" amount="45.99" />
-                        <TransactionItem label="Regul Center Park" amount="123.02" />
-                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" />
-                        <TransactionItem label="Lego Store" amount="45.99" />
-                        <TransactionItem label="Regul Center Park" amount="123.02" />
-                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" />
-                        <TransactionItem label="Lego Store" amount="45.99" />
-                        <TransactionItem label="Regul Center Park" amount="123.02" />
-                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" />
-                        <TransactionItem label="Lego Store" amount="45.99" />
-                        <TransactionItem label="Regul Center Park" amount="123.02" />
-                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" />
-                        <TransactionItem label="Lego Store" amount="45.99" />
+                        <TransactionItem label="Regul Center Park" amount="123.02" onClick={ openDetailHandler } />
+                        <TransactionItem label="Salaire Novembre 3maGroup" amount="900" isCredit="true" onClick={ openDetailHandler } />
+                        <TransactionItem label="Lego Store" amount="45.99" onClick={ openDetailHandler } />
                     </ItemList>
                 </HeadAndContent>
 
                 { /* Détail d'un transaction */ }
-                {/* <HeadAndContent title="Détail de la transaction"  styleClass={ classes['detail'] }>
+                <HeadAndContent title="Détail de la transaction"  styleClass={ `${classes['detail']} ${ isDetailOpen ? classes['detail_open'] : "" }` }>
                     
-                </HeadAndContent> */}
+                </HeadAndContent>
 
             </PageStructure>
         </>

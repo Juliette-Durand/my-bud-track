@@ -7,6 +7,8 @@ import { AuthContext } from "../contexts/auth-context.jsx";
 
 import { FormInput } from '../components/form-input/FormInput';
 import { Button } from '../components/button/Button';
+import { ErrorItem } from '../components/error/ErrorItem.jsx';
+
 import useFetch from '../hooks/useFetch.js';
 
 export const Login = () => {
@@ -76,8 +78,6 @@ export const Login = () => {
         }
 
         const res = await request(options);
-        console.log(`res : `);
-        console.log(res);
         
 
         // Réponse de l'API
@@ -103,6 +103,14 @@ export const Login = () => {
         <div className={`${classes['login_container']}`}>
             <h1 className={`mb-small`}>Se connecter</h1>
             <form action="" method="POST" id="login_form" onSubmit={submitHandler} >
+                {( Object.keys(errors).length > 0 || apiError) && (
+                    <ErrorItem>
+                        { Object.entries(errors).map(([field, message]) => (
+                            <p key={field}>{message}</p>
+                        ))}
+                        {apiError && <p>{apiError}</p>}
+                    </ErrorItem>
+                )}
                 <FormInput type="email" name="email" label="Adresse email" placeholder="exemple@email.com" containerClasses={['mb-small']} value={ email } onChange={ changeEmailValue } isInvalid={errors.email ? true : false} />
 
                 <FormInput type="password" name="password" label="Mot de passe" containerClasses={'mb-grand'} value={ password } onChange={ changePasswordValue } isInvalid={errors.password ? true : false} />

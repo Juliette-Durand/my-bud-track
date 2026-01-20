@@ -67,8 +67,6 @@ export const TransactionAccountSelect = ({ isDestAccount = false }) => {
             setFilteredAccounts([]);
         } else {
             const filteredList = publicAccounts.filter((account) => {
-                console.log(account.label.toLowerCase().includes(trimmedSearch.toLowerCase()));
-                
                 return account.label.toLowerCase().includes(trimmedSearch.toLowerCase());
             });
             setFilteredAccounts(filteredList);

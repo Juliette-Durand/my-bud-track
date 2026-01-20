@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${refreshToken}`,
+                    Authorization: `Bearer ${accessToken}`,
                 },
             });
         } finally {

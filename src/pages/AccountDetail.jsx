@@ -19,7 +19,6 @@ export const AccountDetail = () => {
 
     const [isDetailOpen, setIsDetailOpen] = useState(false);
     const openDetailHandler = () => {
-        console.log('Click');
         setIsDetailOpen(true);
     }
 

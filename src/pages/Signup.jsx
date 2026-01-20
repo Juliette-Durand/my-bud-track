@@ -1,6 +1,7 @@
 import classes from './Signup.module.css'
 import { FormInput } from '../components/form-input/FormInput';
 import { Button } from '../components/button/Button';
+import { ErrorItem } from '../components/error/ErrorItem';
 import { useNavigate } from "react-router";
 import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
@@ -97,9 +98,7 @@ export const Signup = () => {
         }
 
         const res = await request(options);
-        console.log(`res : `);
-        console.log(res);
-        
+
 
         // Réponse de l'API
         if (res.succeed) {
@@ -120,6 +119,14 @@ export const Signup = () => {
         <div className={classes['signup_container']} >
             <h1 className="mb-small">S'inscrire</h1>
             <form action="" method="post" id="signup_form" onSubmit={submitHandler}>
+                {( Object.keys(errors).length > 0 || apiError) && (
+                    <ErrorItem>
+                        { Object.entries(errors).map(([field, message]) => (
+                            <p key={field}>{message}</p>
+                        ))}
+                        {apiError && <p>{apiError}</p>}
+                    </ErrorItem>
+                )}
                 <div className={classes['form_name_container']}>
                     <FormInput type="text" name="firstname" label="Prénom" placeholder="John" containerClasses={['mb-small']} value={firstname} onChange={changeFirstnameValue} isInvalid={errors.firstname ? true : false} />
                     <FormInput type="text" name="lastname" label="Nom" placeholder="Doe" containerClasses={['mb-small']} value={lastname} onChange={changeLastnameValue} isInvalid={errors.lastname ? true : false} />
@@ -128,7 +135,7 @@ export const Signup = () => {
                 <FormInput type="password" name="password" label="Mot de passe" containerClasses={['mb-small']} value={password} onChange={changePasswordValue} isInvalid={errors.password ? true : false} />
                 <FormInput type="password" name="conf_password" label="Confirmation du mot de passe" containerClasses={['mb-grand']} value={confPassword} onChange={changeConfPasswordValue} isInvalid={errors.conf_password ? true : false} />
 
-                <Button type="submit" text="Inscription" style="primary" moreClasses="mb-small" disabled={ loading } />
+                <Button type="submit" text="Inscription" style="primary" moreClasses="mb-small" disabled={loading} />
                 <p>Déjà inscrit ?<br className="hidden-tablet hidden-desktop"></br> <a href="" onClick={onClickHandler} >Me connecter</a></p>
             </form>
         </div>

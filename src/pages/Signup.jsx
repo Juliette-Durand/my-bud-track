@@ -6,7 +6,7 @@ import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 
 const URL_API = import.meta.env.VITE_API_URL;
-const endpoint = 'auth/register/'
+const endpoint = '/auth/register/'
 
 export const Signup = () => {
 

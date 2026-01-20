@@ -15,7 +15,7 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const { request } = useFetch(
-        `${import.meta.env.VITE_API_URL}auth/login`
+        `${import.meta.env.VITE_API_URL}/auth/login`
     );
 
     // Définition des states
